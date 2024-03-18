@@ -1,4 +1,4 @@
-from app.io.input import read_text_from_file_by_python_tools
+from app.io.input import read_text_from_file
 
 
 def write_text_to_console(text):
@@ -28,7 +28,7 @@ def write_text_to_file(text, filename):
     >>> expected_text = "hello, python!"
     >>> new_filename = "text/new.txt"
     >>> write_text_to_file(expected_text, new_filename)
-    >>> actual_text = read_text_from_file_by_python_tools(new_filename)
+    >>> actual_text = read_text_from_file(new_filename)
     >>> assert actual_text == expected_text
     Args:
         text (str): The text to write to the console.

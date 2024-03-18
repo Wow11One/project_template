@@ -19,13 +19,13 @@ def read_text_from_console():
     return input_value
 
 
-def read_text_from_file_by_python_tools(filename):
+def read_text_from_file(filename):
     """
     Read data from file by built-in Python tools.
     Examples:
-    >>> read_text_from_file_by_python_tools("text/hello.txt")
+    >>> read_text_from_file("text/hello.txt")
     "hello, python!"
-    >>> read_text_from_file_by_python_tools("text/empty.txt")
+    >>> read_text_from_file("text/empty.txt")
     ""
     Args:
         filename (str): The name of file to read from.
@@ -34,13 +34,9 @@ def read_text_from_file_by_python_tools(filename):
     Raises:
         FileNotFoundError: if programm is unable to locate the file.
     """
-    try:
-        with open(filename, "r") as my_file:
-            return my_file.read()
-    except FileNotFoundError as e:
-        print(e)
-    finally:
-        my_file.close()
+
+    with open(filename, "r") as my_file:
+        return my_file.read()
 
 
 def read_text_from_file_by_pandas(filename):
