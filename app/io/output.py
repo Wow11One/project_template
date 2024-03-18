@@ -1,3 +1,6 @@
+from app.io.input import read_text_from_file_by_python_tools
+
+
 def write_text_to_console(text):
     """
     write text from a parameter to console.
@@ -13,7 +16,7 @@ def write_text_to_console(text):
     Returns:
         None.
     """
-    pass
+    print(text)
 
 
 def write_text_to_file(text, filename):
@@ -33,4 +36,5 @@ def write_text_to_file(text, filename):
     Returns:
         None.
     """
-    pass
+    with open(filename, "r+") as file:
+        file.write(text)

@@ -1,18 +1,22 @@
+import pandas as pd
+
+
 def read_text_from_console():
     """
     Reads data from console.
 
     Examples:
     >>> read_text_from_console()
-    write your value: 21
+    Enter your value: 21
     21
     >>> read_text_from_console()
-    write your value: 12
+    Enter your value: 12
     12
     Returns:
         str: The user's input value.
     """
-    pass
+    input_value = input("Enter your value: ")
+    return input_value
 
 
 def read_text_from_file_by_python_tools(filename):
@@ -30,10 +34,16 @@ def read_text_from_file_by_python_tools(filename):
     Raises:
         FileNotFoundError: if programm is unable to locate the file.
     """
-    pass
+    try:
+        with open('example.txt', 'r') as file:
+            return file.read()
+    except FileNotFoundError as e:
+        print(e)
+    finally:
+        file.close()
 
 
-def read_text_from_file_by_pandas():
+def read_text_from_file_by_pandas(filename):
     """
     Read data from file as a table by tools of the pandas library.
     Examples:
@@ -44,9 +54,12 @@ def read_text_from_file_by_pandas():
         2    Bob   30     180"
     >>> read_text_from_file_by_pandas("text/empty.txt")
     ""
+    Args:
+        filename (str): The name of file to read from.
     Returns:
         str: The content of the file as a table.
     Raises:
         FileNotFoundError: if programm is unable to locate the file.
     """
-    pass
+    df = pd.read_table(filename, sep="\s+", names=['Name', 'Age', 'Height'])
+    return df
