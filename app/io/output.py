@@ -36,5 +36,5 @@ def write_text_to_file(text, filename):
     Returns:
         None.
     """
-    with open(filename, "r+") as file:
+    with open(filename, "w+") as file:
         file.write(text)

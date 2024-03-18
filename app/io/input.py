@@ -35,19 +35,19 @@ def read_text_from_file_by_python_tools(filename):
         FileNotFoundError: if programm is unable to locate the file.
     """
     try:
-        with open('example.txt', 'r') as file:
-            return file.read()
+        with open(filename, "r") as my_file:
+            return my_file.read()
     except FileNotFoundError as e:
         print(e)
     finally:
-        file.close()
+        my_file.close()
 
 
 def read_text_from_file_by_pandas(filename):
     """
     Read data from file as a table by tools of the pandas library.
     Examples:
-    >>> read_text_from_file_by_pandas("text/pandas_first.txt")
+    >>> read_text_from_file_by_pandas("text/pandas.txt")
             "Name  Age  Height
         0   John   25     170
         1  Alice   28     165
